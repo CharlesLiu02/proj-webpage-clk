@@ -118,7 +118,7 @@
 
 <h3 align="middle">Part 5: "Pixel sampling" for texture mapping</h3>
 
-<p>Pixel sampling is a way to display images on screens and texture map. The process involves sampling the original image at certain points and reconstructing it based on those values. We used it to implement texture mapping by utilizing Barycentric coordinates to help us determine which screen pixels corresponded to texture coordinates. For nearest pixel sampling, for each screen pixel, we find the nearest texture coordinate by rounding to it. For bilienar pixel sampling, we find the 4 nearest texture coordinates and perform bilinear interpolation to evaluate the color that should be set at our screen pixel. Bilinear interpolation is the process of interpolating two variables using repeated linear interpolation, which we do on the u and v coordinates.</p>
+<p>Pixel sampling is a way to display images on screens and texture map. The process involves sampling the original image at certain points and reconstructing it based on those values. We used it to implement texture mapping by utilizing Barycentric coordinates to help us determine which screen pixels corresponded to texture coordinates. For nearest pixel sampling, for each screen pixel, we find the nearest texture coordinate by rounding to it. For bilienar pixel sampling, we find the 4 nearest texture coordinates and perform bilinear interpolation to evaluate the color that should be set at our screen pixel. Bilinear interpolation is the process of interpolating two variables using repeated linear interpolation, which we do on the u and v coordinates. By doing bilinear interpolation, a final value is produced, which is the result of the 4 points' values weighted accordingly.</p>
 
 <div align="middle">
   <table style="width=100%">
@@ -177,20 +177,13 @@
         <figcaption align="middle">Nearest level, Bilinear pixel sampling</figcaption>
       </td>
     </tr>
-    <tr>
-      <td>
-        <img src="images/task6_nearest_nearest_far.png" align="middle" width="400px"/>
-        <figcaption align="middle">Nearest level, Nearest pixel sampling, zoomed out</figcaption>
-      </td>
-      <td>
-        <img src="images/task6_nearest_linear_far.png" align="middle" width="400px"/>
-        <figcaption align="middle">Nearest level, Bilinear pixel sampling, zoomed out</figcaption>
-      </td>
-    </tr>
   </table>
 </div>
 
-<p>For the last 2 images, to visualize the nearest level sampling, we can tell that a mipmap of lower resolution is being used when we zoom out because in the pixel insepctor, the eye of the astronaut shrinks compared to the higher resolution mipmap.</p>
+<p>As we go from zero level to nearest level and nearest pixel sampling to bilinear pixel sampling, the image has less aliasing and looks smoother. The bottom left image looks the smoothest out of all of the images.</p>
+
+<h3 align="middle">Website Link</h3>
+<p><a href="https://charlesliu02.github.io/proj-webpage-clk/proj1/index.html">https://charlesliu02.github.io/proj-webpage-clk/proj1/index.html</a></p>
 
 </body>
 </html>
